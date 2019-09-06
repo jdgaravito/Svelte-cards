@@ -65,10 +65,13 @@
   <p>please enter some data</p>
 {/if}
 
-{#each createdContacts as contact}
+{#each createdContacts as contact, index}
+  <p>#{index+1}</p>
 <ContactCard
     userName={contact.name}
     jobPosition={contact.jobTitle}
     userDescription={contact.desc}
     imageUrl={contact.imageUrl} />
+{:else}
+  <p>please start adding some contacts</p>
 {/each}
